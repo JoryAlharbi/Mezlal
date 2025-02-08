@@ -1,92 +1,154 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mezlal – Smart UV Umbrella</title>
+    <title>مِظْلَل – المِظَلَّة الذكية للحماية من الأشعة فوق البنفسجية</title>
     <link rel="stylesheet" href="style.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script src="script.js" defer></script>
 </head>
+
 <body>
 
     <header>
-        <img src="Logo.png" alt="Mezlal Logo">
-        <p>Stay Cool, Stay Protected</p>
+        <img src="Logo.png" alt="شعار مِظلال">
+        <p id="tagline"> مشي مريح، حماية دائمة </p>
+        <div class="language-switcher">
+            <button id="lang-ar">العربية</button>
+            <button id="lang-en">English</button>
+        </div>
     </header>
-    
+
     <section class="hero">
-        <img src="umbrella.png" alt="Mezlal Smart UV Umbrella">
+        <img src="umbrella.png" alt="مِظلال - المِظَلَّة الذكية">
         
         <div class="hero-text">
-            <h2>The Future of Sun Protection</h2>
-            <p>Mezlal is a <strong>UV-protective smart umbrella</strong> with cooling features including <strong>water mist, vibration, and a fan</strong>.</p>
-            
+            <h2 id="title">مستقبل الحماية من الشمس</h2>
+            <p id="description">
+                مِظْلَل هي <strong>مِظَلَّة ذكية للحماية من الأشعة فوق البنفسجية</strong> مع ميزات تبريد تشمل 
+                <strong>رذاذ الماء، الاهتزاز، والمروحة</strong>.
+            </p>
+
             <div class="email-container">
-                <input type="email" id="email-input" placeholder="Enter your email" required>
-                <button id="submit-email">Join the Waitlist</button>
+                <input type="email" id="email-input" placeholder="أدخل بريدك الإلكتروني" required>
+                <button id="submit-email">انضم إلى قائمة الانتظار</button>
             </div>
         </div>
     </section>
-    
+
     <section class="list">
         <div class="feature">
             <span>☼</span>
-            <p>UV Protection</p>
+            <p id="feature-uv">حماية من الأشعة فوق البنفسجية</p>
         </div>
         <div class="feature">
             <span>🌫</span>
-            <p>Built-in Fan for Cooling</p>
+            <p id="feature-fan">مروحة مدمجة للتبريد</p>
         </div>
         <div class="feature">
             <span>༄</span>
-            <p>Water Mist Function</p>
+            <p id="feature-mist">ميزة رذاذ الماء</p>
         </div>
         <div class="feature">
             <span>🌡</span> 
-            <p>Smart Temperature Sensing</p>
+            <p id="feature-temp">استشعار ذكي لدرجة الحرارة</p>
         </div>
     </section>
-    
-    
 
     <footer>
-        <p>© 2025 Mezlal. All Rights Reserved.</p>
+        <p>© 2025 مِظْلال. جميع الحقوق محفوظة.</p>
     </footer>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+      
+        const firebaseConfig = {
+          apiKey: "YOUR_API_KEY",
+          authDomain: "mezlal.firebaseapp.com",
+          projectId: "mezlal",
+          storageBucket: "mezlal.appspot.com",
+          messagingSenderId: "SENDER_ID",
+          appId: "APP_ID"
+        };
+      
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+      
+        document.getElementById("submit-email").addEventListener("click", async function() {
+          const email = document.getElementById("email-input").value;
+          if (email) {
+            try {
+              await addDoc(collection(db, "emails"), { email: email });
+              alert(`شكرًا لانضمامك إلى قائمة الانتظار!`);
+              document.getElementById("email-input").value = '';  
+            } catch (error) {
+              console.error("خطأ في حفظ البريد الإلكتروني: ", error);
+              alert("حدث خطأ، يرجى المحاولة مرة أخرى.");
+            }
+          } else {
+            alert("يرجى إدخال بريد إلكتروني صالح.");
+          }
+        });
+    </script>
+
+    <script>
+        const translations = {
+            ar: {
+                title: "مستقبل الحماية من الشمس",
+                description: "مِظلال هي مِظَلَّة ذكية للحماية من الأشعة فوق البنفسجية مع ميزات تبريد تشمل رذاذ الماء، الاهتزاز، والمروحة.",
+                featureUV: "حماية من الأشعة فوق البنفسجية",
+                featureFan: "مروحة مدمجة للتبريد",
+                featureMist: "ميزة رذاذ الماء",
+                featureTemp: "استشعار ذكي لدرجة الحرارة",
+                placeholder: "أدخل بريدك الإلكتروني",
+                button: "انضم إلى قائمة الانتظار",
+                tagline: "مشي مريح، حماية دائمة"
+
+            },
+            en: {
+                title: "The Future of Sun Protection",
+                description: "Mezlal is a UV-protective smart umbrella with cooling features including water mist, vibration, and a fan.",
+                featureUV: "UV Protection",
+                featureFan: "Built-in Fan for Cooling",
+                featureMist: "Water Mist Function",
+                featureTemp: "Smart Temperature Sensing",
+                placeholder: "Enter your email",
+                button: "Join the Waitlist",
+                tagline: "Stay Cool, Stay Protected"
+
+            }
+        };
+
+        function setLanguage(lang) {
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+
+            document.getElementById("title").textContent = translations[lang].title;
+            document.getElementById("description").textContent = translations[lang].description;
+            document.getElementById("feature-uv").textContent = translations[lang].featureUV;
+            document.getElementById("feature-fan").textContent = translations[lang].featureFan;
+            document.getElementById("feature-mist").textContent = translations[lang].featureMist;
+            document.getElementById("feature-temp").textContent = translations[lang].featureTemp;
+            document.getElementById("email-input").placeholder = translations[lang].placeholder;
+            document.getElementById("submit-email").textContent = translations[lang].button;
+            document.getElementById("tagline").textContent = translations[lang].tagline; 
+
+
+            // Save preference
+            localStorage.setItem("selectedLanguage", lang);
+        }
+
+        // Load saved language preference
+        const savedLang = localStorage.getItem("selectedLanguage") || "ar";
+        setLanguage(savedLang);
+
+        // Event listeners for buttons
+        document.getElementById("lang-ar").addEventListener("click", () => setLanguage("ar"));
+        document.getElementById("lang-en").addEventListener("click", () => setLanguage("en"));
+    </script>
 
 </body>
 </html>
-
-<script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
-  
-    const firebaseConfig = {
-      apiKey: "YOUR_API_KEY",
-      authDomain: "mezlal.firebaseapp.com",
-      projectId: "mezlal",
-      storageBucket: "mezlal.appspot.com",
-      messagingSenderId: "SENDER_ID",
-      appId: "APP_ID"
-    };
-  
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
-  
-    document.getElementById("submit-email").addEventListener("click", async function() {
-      const email = document.getElementById("email-input").value;
-      if (email) {
-        try {
-          await addDoc(collection(db, "emails"), { email: email });
-          alert(`Thank you for joining the waitlist!`);
-          document.getElementById("email-input").value = '';  
-        } catch (error) {
-          console.error("Error saving email: ", error);
-          alert("Something went wrong. Try again.");
-        }
-      } else {
-        alert("Please enter a valid email address.");
-      }
-    });
-  </script>
-  
