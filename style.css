@@ -1,0 +1,191 @@
+/* General Styles */
+body {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #000; /* Deep black background */
+    color: white;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Header */
+header {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+}
+
+header img {
+    width: 100px;  /* Adjust width as needed */
+    height: auto;  /* Maintain aspect ratio */
+}
+
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+header nav a:hover {
+    color: #86ff49; /* Neon Purple */
+}
+
+body {
+
+    background: linear-gradient(135deg, #1a1a1a, #000);
+
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left; /* Align text to the left */
+    height: 90vh;
+    padding: 20px;
+    gap: 30px; /* Space between image and text */
+}
+
+/* Style for Image */
+.hero img {
+    width: 40%; /* Adjust size */
+    max-width: 350px;
+    height: auto;
+}
+
+/* Hero Text Section */
+.hero-text {
+    max-width: 500px;
+}
+
+/* Button */
+.hero button {
+    margin-top: 15px;
+}
+
+
+/* Buttons */
+.hero .buttons {
+    margin-top: 20px;
+}
+
+.hero button {
+    background: linear-gradient(90deg, #86ff49, #113300);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 0 10px #86ff49;
+    margin: 10px;
+}
+
+.hero button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #0e2b00;
+}
+/* Features Section */
+.list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    height: 30vh;
+    padding: 50px;
+    gap: 50px;
+}
+
+/* Features list section */
+.feature {
+    width: 40%;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.feature span {
+    width: 90px; /* Adjust size as needed */
+    height: auto;
+    font-size: 3rem; /* Increased size */
+
+}
+
+
+/* Abstract Neon Shapes */
+.abstract-shapes {
+    position: absolute;
+    top: 30%;
+    right: 10%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(123, 97, 255, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
+    filter: blur(50px);
+}
+
+
+
+
+/* Footer */
+footer {
+    background: #000;
+    color: white;
+    padding: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    border-top: 2px solid #86ff49;
+}
+/* Flex container to align input and button side by side */
+.email-container {
+    display: flex;
+    justify-content: center; /* Centers both elements horizontally */
+    align-items: center; /* Vertically aligns them in the center */
+    gap: 10px; /* Adds space between the email input and the button */
+    margin-top: 15px; /* Adds space above the container */
+}
+
+/* Adjust input styling */
+#email-input {
+    width: 250px; /* Set a specific width for the input */
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 50px;
+    background-color: black;
+    color: white;
+    border: 2px solid #57714a; /* Same as button color */
+    outline: none;
+    transition: 0.3s ease-in-out;
+}
+
+/* Button styling for email submission */
+#submit-email {
+    padding: 10px 20px; /* Reduced padding */
+    font-size: 1rem; /* Adjusted font size */
+    font-weight: bold;
+    background: linear-gradient(90deg, #668755, #113300);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 0 10px #566a4b;
+}
+
+
+#submit-email:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #0e2b00;
+}

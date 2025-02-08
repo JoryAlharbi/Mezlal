@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mezlal – Smart UV Umbrella</title>
+    <link rel="stylesheet" href="style.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <img src="Logo.png" alt="Mezlal Logo">
+        <p>Stay Cool, Stay Protected</p>
+    </header>
+    
+    <section class="hero">
+        <img src="umbrella.png" alt="Mezlal Smart UV Umbrella">
+        
+        <div class="hero-text">
+            <h2>The Future of Sun Protection</h2>
+            <p>Mezlal is a <strong>UV-protective smart umbrella</strong> with cooling features including <strong>water mist, vibration, and a fan</strong>.</p>
+            
+            <div class="email-container">
+                <input type="email" id="email-input" placeholder="Enter your email" required>
+                <button id="submit-email">Join the Waitlist</button>
+            </div>
+        </div>
+    </section>
+    
+    <section class="list">
+        <div class="feature">
+            <span>☼</span>
+            <p>UV Protection</p>
+        </div>
+        <div class="feature">
+            <span>🌫</span>
+            <p>Built-in Fan for Cooling</p>
+        </div>
+        <div class="feature">
+            <span>༄</span>
+            <p>Water Mist Function</p>
+        </div>
+        <div class="feature">
+            <span>🌡</span> 
+            <p>Smart Temperature Sensing</p>
+        </div>
+    </section>
+    
+    
+
+    <footer>
+        <p>© 2025 Mezlal. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
+
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+  
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "mezlal.firebaseapp.com",
+      projectId: "mezlal",
+      storageBucket: "mezlal.appspot.com",
+      messagingSenderId: "SENDER_ID",
+      appId: "APP_ID"
+    };
+  
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+  
+    document.getElementById("submit-email").addEventListener("click", async function() {
+      const email = document.getElementById("email-input").value;
+      if (email) {
+        try {
+          await addDoc(collection(db, "emails"), { email: email });
+          alert(`Thank you for joining the waitlist!`);
+          document.getElementById("email-input").value = '';  
+        } catch (error) {
+          console.error("Error saving email: ", error);
+          alert("Something went wrong. Try again.");
+        }
+      } else {
+        alert("Please enter a valid email address.");
+      }
+    });
+  </script>
+  
