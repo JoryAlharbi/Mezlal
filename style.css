@@ -1,7 +1,7 @@
 /* General Styles */
 body {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #1a1a1a, #000);
+    background-color: #000; /* Deep black background */
     color: white;
     margin: 0;
     padding: 0;
@@ -12,26 +12,21 @@ body {
 header {
     background: rgba(0, 0, 0, 0.8);
     color: white;
-    padding: 20px 50px;
+    padding: 20px;
     font-size: 1.1rem;
     font-weight: bold;
     text-transform: uppercase;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Ensure responsiveness */
+    padding: 20px 50px;
 }
 
 header img {
-    width: 100px;
-    height: auto;
+    width: 100px;  /* Adjust width as needed */
+    height: auto;  /* Maintain aspect ratio */
 }
 
-header nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
 
 header nav a {
     color: white;
@@ -42,7 +37,13 @@ header nav a {
 }
 
 header nav a:hover {
-    color: #5e967d;
+    color: #86ff49; /* Neon Purple */
+}
+
+body {
+
+    background: linear-gradient(135deg, #1a1a1a, #000);
+
 }
 
 /* Hero Section */
@@ -50,23 +51,31 @@ header nav a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: left;
+    text-align: left; /* Align text to the left */
     height: 90vh;
     padding: 20px;
-    gap: 30px;
-    flex-wrap: wrap; /* Ensure layout adjusts on smaller screens */
+    gap: 30px; /* Space between image and text */
 }
 
+/* Style for Image */
 .hero img {
-    width: 40%;
+    width: 40%; /* Adjust size */
     max-width: 350px;
     height: auto;
 }
 
+/* Hero Text Section */
 .hero-text {
     max-width: 500px;
 }
 
+/* Button */
+.hero button {
+    margin-top: 15px;
+}
+
+
+/* Buttons */
 .hero .buttons {
     margin-top: 20px;
 }
@@ -89,18 +98,18 @@ header nav a:hover {
     transform: scale(1.1);
     box-shadow: 0 0 20px #2f4340;
 }
-
 /* Features Section */
 .list {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+    justify-content: space-between;
     text-align: center;
+    height: 30vh;
     padding: 20px;
     gap: 50px;
 }
 
+/* Features list section */
 .feature {
     width: 40%;
     text-align: center;
@@ -108,23 +117,33 @@ header nav a:hover {
 }
 
 .feature span {
-    font-size: 3rem;
+    width: 90px; /* Adjust size as needed */
+    height: auto;
+    font-size: 3rem; /* Increased size */
+
 }
 
-/* Video Section */
 .video-container {
-    height: auto;
+    height: 100vh;
     padding: 20px;
     text-align: center;
     margin: 40px 0;
 }
 
 .video-container iframe {
-    width: 80%;
-    max-width: 800px;
-    height: 400px;
-    margin: 0 auto;
+    width: 80%; /* Adjust width to be smaller */
+    max-width: 100%;
+    height: 70%; /* Adjust height to make it smaller */
+    margin: 0 auto; /* Center the iframe */
 }
+
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
 
 /* Footer */
 footer {
@@ -136,32 +155,32 @@ footer {
     text-align: center;
     border-top: 2px solid #5e967d;
 }
-
-/* Email Subscription Section */
+/* Flex container to align input and button side by side */
 .email-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-top: 15px;
-    flex-wrap: wrap; /* Allow input and button to stack */
+    justify-content: center; /* Centers both elements horizontally */
+    align-items: center; /* Vertically aligns them in the center */
+    gap: 10px; /* Adds space between the email input and the button */
+    margin-top: 15px; /* Adds space above the container */
 }
 
+/* Adjust input styling */
 #email-input {
-    width: 250px;
+    width: 250px; /* Set a specific width for the input */
     padding: 12px;
     font-size: 1rem;
     border-radius: 50px;
     background-color: black;
     color: white;
-    border: 2px solid #5e967d;
+    border: 2px solid #5e967d; /* Same as button color */
     outline: none;
     transition: 0.3s ease-in-out;
 }
-
+/**/
+/* Button styling for email submission */
 #submit-email {
-    padding: 10px 20px;
-    font-size: 1rem;
+    padding: 10px 20px; /* Reduced padding */
+    font-size: 1rem; /* Adjusted font size */
     font-weight: bold;
     background: linear-gradient(90deg, #5e967d, #2f4340);
     color: white;
@@ -172,16 +191,14 @@ footer {
     box-shadow: 0 0 10px #c5f8e2;
 }
 
+
 #submit-email:hover {
     transform: scale(1.1);
     box-shadow: 0 0 20px #2f4340;
 }
-
-/* Language Switcher */
 .language-switcher {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
     gap: 10px;
     margin: 20px;
 }
@@ -203,72 +220,4 @@ footer {
 .language-switcher button:focus {
     outline: none;
     border-color: #0056b3;
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
-        height: auto;
-    }
-
-    .hero img {
-        width: 60%;
-    }
-
-    .list {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .feature {
-        width: 80%;
-    }
-}
-
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .video-container iframe {
-        width: 100%;
-        height: 300px;
-    }
-
-    .hero img {
-        width: 80%;
-        max-width: 250px;
-    }
-
-    .list {
-        gap: 30px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero img {
-        width: 90%;
-        max-width: 200px;
-    }
-
-    .hero-text {
-        font-size: 1rem;
-    }
-
-    .video-container iframe {
-        width: 100%;
-        height: 250px;
-    }
-
-    .feature {
-        font-size: 1rem;
-    }
-
-    .language-switcher button {
-        font-size: 10px;
-        padding: 8px 16px;
-    }
 }

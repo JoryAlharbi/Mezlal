@@ -65,10 +65,10 @@
     </section>
     
     
-
     <footer>
-        <p>© 2025 مِظْلال. جميع الحقوق محفوظة.</p>
+        <p id="footer-text"></p>
     </footer>
+    
 
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
@@ -116,7 +116,8 @@
                 button: "انضم إلى قائمة الانتظار",
                 tagline: "مشي مريح، حماية دائمة", 
                 video: "شاهد الفيديو" ,
-                features: "مميزات مِظلال"
+                features: "مميزات مِظلال",
+                footer: "© 2025 مِظْلال. جميع الحقوق محفوظة."
 
             },
             en: {
@@ -130,7 +131,8 @@
                 button: "Join the Waitlist",
                 tagline: "Stay Cool, Stay Protected",
                 video: "Watch our Video" , 
-                features: "Our Main Features"
+                features: "Our Main Features",
+                footer: "© 2025 Mezlal. All rights reserved."
 
             }
         };
@@ -150,6 +152,7 @@
             document.getElementById("tagline").textContent = translations[lang].tagline; 
             document.getElementById("video").textContent = translations[lang].video;  // Update video button
             document.getElementById("features").textContent = translations[lang].features;  // Update features title
+            document.getElementById("footer-text").textContent = translations[lang].footer;  // Update footer text
 
 
             // Save preference
