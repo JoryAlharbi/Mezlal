@@ -81,7 +81,7 @@ body {
 }
 
 .hero button {
-    background: linear-gradient(90deg, #86ff49, #113300);
+    background: linear-gradient(90deg, #5e967d, #113300);
     color: white;
     border: none;
     padding: 12px 30px;
@@ -90,13 +90,13 @@ body {
     border-radius: 50px;
     cursor: pointer;
     transition: 0.3s ease-in-out;
-    box-shadow: 0 0 10px #86ff49;
+    box-shadow: 0 0 10px #5e967d;
     margin: 10px;
 }
 
 .hero button:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 20px #0e2b00;
+    box-shadow: 0 0 20px #2f4340;
 }
 /* Features Section */
 .list {
@@ -124,18 +124,6 @@ body {
 }
 
 
-/* Abstract Neon Shapes */
-.abstract-shapes {
-    position: absolute;
-    top: 30%;
-    right: 10%;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(123, 97, 255, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
-    filter: blur(50px);
-}
-
-
 
 
 /* Footer */
@@ -146,7 +134,7 @@ footer {
     font-size: 1rem;
     font-weight: bold;
     text-align: center;
-    border-top: 2px solid #86ff49;
+    border-top: 2px solid #5e967d;
 }
 /* Flex container to align input and button side by side */
 .email-container {
@@ -165,7 +153,7 @@ footer {
     border-radius: 50px;
     background-color: black;
     color: white;
-    border: 2px solid #57714a; /* Same as button color */
+    border: 2px solid #5e967d; /* Same as button color */
     outline: none;
     transition: 0.3s ease-in-out;
 }
@@ -175,17 +163,17 @@ footer {
     padding: 10px 20px; /* Reduced padding */
     font-size: 1rem; /* Adjusted font size */
     font-weight: bold;
-    background: linear-gradient(90deg, #668755, #113300);
+    background: linear-gradient(90deg, #5e967d, #2f4340);
     color: white;
     border: none;
     border-radius: 50px;
     cursor: pointer;
     transition: 0.3s ease-in-out;
-    box-shadow: 0 0 10px #566a4b;
+    box-shadow: 0 0 10px #c5f8e2;
 }
 
 
 #submit-email:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 20px #0e2b00;
+    box-shadow: 0 0 20px #2f4340;
 }
