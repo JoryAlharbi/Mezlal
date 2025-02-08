@@ -169,7 +169,7 @@ footer {
     outline: none;
     transition: 0.3s ease-in-out;
 }
-
+/**/
 /* Button styling for email submission */
 #submit-email {
     padding: 10px 20px; /* Reduced padding */
