@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مِظْلَل – المِظَلَّة الذكية للحماية من الأشعة فوق البنفسجية</title>
+    <title> مِظلال</title>
     <link rel="stylesheet" href="style.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script src="script.js" defer></script>
@@ -13,7 +13,7 @@
 <body>
 
     <header>
-        <img src="Logo.png" alt="شعار مِظلال">
+        <img src="Mezlal-.png" alt="شعار مِظلال">
         <p id="tagline"> مشي مريح، حماية دائمة </p>
         <div class="language-switcher">
             <button id="lang-ar">العربية</button>
@@ -37,6 +37,7 @@
             </div>
         </div>
     </section>
+    <h3 id="features">ميزات مِظلال</h3>
 
     <section class="list">
         <div class="feature">
@@ -56,6 +57,14 @@
             <p id="feature-temp">استشعار ذكي لدرجة الحرارة</p>
         </div>
     </section>
+    <section>
+        <div class="video-container">
+            <h3 id="video">شاهد الفيديو</h3>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ShObpH7j36E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </section>
+    
+    
 
     <footer>
         <p>© 2025 مِظْلال. جميع الحقوق محفوظة.</p>
@@ -105,7 +114,9 @@
                 featureTemp: "استشعار ذكي لدرجة الحرارة",
                 placeholder: "أدخل بريدك الإلكتروني",
                 button: "انضم إلى قائمة الانتظار",
-                tagline: "مشي مريح، حماية دائمة"
+                tagline: "مشي مريح، حماية دائمة", 
+                video: "شاهد الفيديو" ,
+                features: "مميزات مِظلال"
 
             },
             en: {
@@ -117,7 +128,9 @@
                 featureTemp: "Smart Temperature Sensing",
                 placeholder: "Enter your email",
                 button: "Join the Waitlist",
-                tagline: "Stay Cool, Stay Protected"
+                tagline: "Stay Cool, Stay Protected",
+                video: "Watch our Video" , 
+                features: "Our Main Features"
 
             }
         };
@@ -135,6 +148,8 @@
             document.getElementById("email-input").placeholder = translations[lang].placeholder;
             document.getElementById("submit-email").textContent = translations[lang].button;
             document.getElementById("tagline").textContent = translations[lang].tagline; 
+            document.getElementById("video").textContent = translations[lang].video;  // Update video button
+            document.getElementById("features").textContent = translations[lang].features;  // Update features title
 
 
             // Save preference
