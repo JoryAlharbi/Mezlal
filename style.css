@@ -1,7 +1,7 @@
 /* General Styles */
 body {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-color: #000; /* Deep black background */
+    background-color:  linear-gradient(135deg, #1a1a1a, #000);
     color: white;
     margin: 0;
     padding: 0;
@@ -12,14 +12,14 @@ body {
 header {
     background: rgba(0, 0, 0, 0.8);
     color: white;
-    padding: 20px;
+    padding: 20px 50px;
     font-size: 1.1rem;
     font-weight: bold;
     text-transform: uppercase;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
+    flex-wrap: wrap; /* Ensure responsiveness */
 }
 
 header img {
@@ -27,13 +27,14 @@ header img {
     height: auto;  /* Maintain aspect ratio */
 }
 
+header nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
 header nav a {
     color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
-    transition: 0.3s;
 }
 
 header nav a:hover {
@@ -42,7 +43,7 @@ header nav a:hover {
 
 body {
 
-    background: linear-gradient(135deg, #1a1a1a, #000);
+    color: #5e967d;
 
 }
 
@@ -55,6 +56,7 @@ body {
     height: 90vh;
     padding: 20px;
     gap: 30px; /* Space between image and text */
+    flex-wrap: wrap;
 }
 
 /* Style for Image */
@@ -102,9 +104,9 @@ body {
 .list {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
     text-align: center;
-    height: 30vh;
     padding: 20px;
     gap: 50px;
 }
@@ -117,24 +119,21 @@ body {
 }
 
 .feature span {
-    width: 90px; /* Adjust size as needed */
-    height: auto;
-    font-size: 3rem; /* Increased size */
-
+    font-size: 3rem;
 }
 
 .video-container {
-    height: 100vh;
+    height: auto;
     padding: 20px;
     text-align: center;
     margin: 40px 0;
 }
 
 .video-container iframe {
-    width: 80%; /* Adjust width to be smaller */
-    max-width: 100%;
-    height: 70%; /* Adjust height to make it smaller */
-    margin: 0 auto; /* Center the iframe */
+    width: 80%;
+    max-width: 800px;
+    height: 400px;
+    margin: 0 auto;
 }
 
 
@@ -158,10 +157,11 @@ footer {
 /* Flex container to align input and button side by side */
 .email-container {
     display: flex;
-    justify-content: center; /* Centers both elements horizontally */
-    align-items: center; /* Vertically aligns them in the center */
-    gap: 10px; /* Adds space between the email input and the button */
-    margin-top: 15px; /* Adds space above the container */
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap; /* Allow input and button to stack */
 }
 
 /* Adjust input styling */
@@ -199,6 +199,7 @@ footer {
 .language-switcher {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 10px;
     margin: 20px;
 }
@@ -220,4 +221,74 @@ footer {
 .language-switcher button:focus {
     outline: none;
     border-color: #0056b3;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+    }
+
+    .hero img {
+        width: 60%;
+    }
+
+    .list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature {
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .video-container iframe {
+        width: 100%;
+        height: 300px;
+    }
+
+    .hero img {
+        width: 80%;
+        max-width: 250px;
+    }
+
+    .list {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero img {
+        width: 90%;
+        max-width: 200px;
+    }
+
+    .hero-text {
+        font-size: 1rem;
+    }
+
+    .video-container iframe {
+        width: 100%;
+        height: 250px;
+    }
+
+    .feature {
+        font-size: 1rem;
+    }
+
+    .language-switcher button {
+        font-size: 10px;
+        padding: 8px 16px;
+    }
 }
