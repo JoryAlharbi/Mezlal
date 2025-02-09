@@ -8,9 +8,11 @@ body {
     text-align: center;
 }
 
+
+
 /* Header */
 header {
-    background: rgba(0, 0, 0, 0.8);
+    background:  #1a1a1a;
     color: white;
     padding: 20px 50px;
     font-size: 1.1rem;
@@ -43,7 +45,9 @@ header nav a:hover {
 
 body {
 
-    color: #5e967d;
+    /* color: #5e967d; */
+    color: #f4f4f4;
+    background-color: #1a1a1af4;
 
 }
 
@@ -146,7 +150,7 @@ h3 {
 
 /* Footer */
 footer {
-    background: #000;
+    background:  #1a1a1a;;
     color: white;
     padding: 20px;
     font-size: 1rem;
@@ -170,7 +174,7 @@ footer {
     padding: 12px;
     font-size: 1rem;
     border-radius: 50px;
-    background-color: black;
+    background-color: #1a1a1af4;
     color: white;
     border: 2px solid #5e967d; /* Same as button color */
     outline: none;

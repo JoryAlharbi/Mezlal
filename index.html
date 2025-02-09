@@ -19,6 +19,7 @@
             <button id="lang-ar">العربية</button>
             <button id="lang-en">English</button>
         </div>
+       
     </header>
 
     <section class="hero">
@@ -167,6 +168,22 @@
         document.getElementById("lang-ar").addEventListener("click", () => setLanguage("ar"));
         document.getElementById("lang-en").addEventListener("click", () => setLanguage("en"));
     </script>
+
+<script>
+    let isDarkMode = false;
+
+    // Toggle between light and dark modes
+    function toggleTheme() {
+        isDarkMode = !isDarkMode;
+        if (isDarkMode) {
+            document.body.classList.add("dark-mode");
+            document.getElementById("theme-toggle").textContent = "☀︎";
+        } else {
+            document.body.classList.remove("dark-mode");
+            document.getElementById("theme-toggle").textContent = "☾";
+        }
+    }
+</script>
 
 </body>
 </html>
