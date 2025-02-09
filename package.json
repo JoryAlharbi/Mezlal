@@ -1,0 +1,24 @@
+{
+  "name": "mezlal",
+  "version": "1.0.0",
+  "description": "Mezlal | مظلال",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "react-scripts build",
+    "start": "react-scripts start",
+
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoryAlharbi/Mezlal.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoryAlharbi/Mezlal/issues"
+  },
+  "homepage": "https://github.com/JoryAlharbi/Mezlal#readme"
+}
