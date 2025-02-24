@@ -121,22 +121,46 @@ body {
 }
 
 .feature {
-    margin: 10px;
+    margin: 40px;
     width: 240px; /* Fixed width for alignment */
-    padding: 3px; /* Padding for better spacing */
+    padding: 46px; /* Padding for better spacing */
     border: 3px solid #5e967d; /* Adds a border similar to the button */
     border-radius: 7px; /* Rounded corners */
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
-    display: flex; /* Aligns the icon and text */
-    flex-direction: column; /* Stacks icon and text vertically */
-    align-items: center; /* Centers content within each feature */
-    justify-content: center; /* Ensures the content is centered vertically and horizontally */
-    text-align: center; /* Center aligns the text */
+    transition: background-color 0.3s, color 0.3s, transform 0.3s ease-in-out; /* Updated to include transform */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-size: contain; /* Ensure the image covers the feature area */
+    background-position: center; /* Center the background image */
+}
+
+#feature-uv:hover {
+    background-image: url('uv-protection.jpeg');
+    transform: scale(1.6);
+}
+
+#feature-fan:hover {
+    background-image: url('umb.png');
+    transform: scale(1.6);
+}
+
+#feature-mist:hover {
+    background-image: url('Mist.png');
+    transform: scale(1.6);
+}
+
+#feature-temp:hover {
+    background-image: url('temp.png');
+    transform: scale(1.6);
 }
 
 .feature:hover {
-    background-color: #5e967d; /* Changes background on hover */
-    color: #ffffff; /* Changes text color on hover */
+    transform: scale(1.05); /* Slightly reduced scale for less abrupt zoom */
+    padding: 10px; /* Ensure padding to handle scale */
+    transition: transform 0.3s ease, background-color 0.3s, color 0.3s;
+
 }
 
 .feature span {
