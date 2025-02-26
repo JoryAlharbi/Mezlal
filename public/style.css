@@ -68,7 +68,7 @@ body {
     width: 100%; /* Adjust size */
     max-width: 250px;
     height: auto;
-    border-radius: 10%;
+    border-radius: 14%;
     object-fit: contain;
 }
 
@@ -337,7 +337,7 @@ footer {
 
 @media (max-width: 480px) {
     .hero img {
-        width: 40%;
+        width: 100%;
         max-width: 200px;
     }
 
@@ -351,8 +351,8 @@ footer {
     }
 
     .feature {
-        font-size: 0.8rem;
-        padding: 8px; 
+        font-size: 1rem;
+        padding: 16px; 
     }
 
     .language-switcher button {
