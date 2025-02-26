@@ -65,10 +65,11 @@ body {
 
 /* Style for Image */
 .hero img {
-    width: 40%; /* Adjust size */
+    width: 100%; /* Adjust size */
     max-width: 250px;
     height: auto;
     border-radius: 14%;
+    object-fit: contain;
 }
 
 /* Hero Text Section */
@@ -110,7 +111,7 @@ body {
 
 .list {
     text-align: center;
-    padding: 40px;
+  
 }
 
 
@@ -118,17 +119,19 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    
+   
 }
 
 .feature {
     margin: 40px;
     width: 240px; /* Fixed width for alignment */
     padding: 46px; /* Padding for better spacing */
-    border: 3px solid #5e967d; /* Adds a border similar to the button */
+    border: 4px solid #5e967d; /* Adds a border similar to the button */
     border-radius: 7px; /* Rounded corners */
-    transition: background-color 0.3s, color 0.3s, transform 0.3s ease-in-out; /* Updated to include transform */
     display: flex;
     flex-direction: column;
+    font-size: 1.4rem;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -138,30 +141,25 @@ body {
 
 #feature-uv:hover {
     background-image: url('uv-protection.jpeg');
-    transform: scale(1.6);
+   
 }
 
 #feature-fan:hover {
     background-image: url('umb.png');
-    transform: scale(1.6);
+   
 }
 
 #feature-mist:hover {
     background-image: url('Mist.png');
-    transform: scale(1.6);
+    
 }
 
 #feature-temp:hover {
     background-image: url('temp.png');
-    transform: scale(1.6);
+   
 }
 
-.feature:hover {
-    transform: scale(1.05); /* Slightly reduced scale for less abrupt zoom */
-    padding: 10px; /* Ensure padding to handle scale */
-    transition: transform 0.3s ease, background-color 0.3s, color 0.3s;
 
-}
 
 .feature span {
     font-size: 2rem; /* Larger icons */
@@ -169,7 +167,7 @@ body {
 }
 
 .feature p {
-    font-size: 1.4rem; /* Readable text size */
+    font-size: 1.9rem; /* Readable text size */
 }
 
 .img-fluid {
@@ -295,8 +293,10 @@ footer {
     }
 
     .list {
-        flex-direction: column;
-        align-items: center;
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     }
 
     .feature {
@@ -320,8 +320,10 @@ footer {
     }
 
     .hero img {
-        width: 60%;
+        width: 100%;
         max-width: 250px;
+        height: auto;
+        object-fit: cover;
     }
 
     .list {
