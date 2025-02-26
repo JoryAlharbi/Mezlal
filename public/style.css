@@ -127,7 +127,7 @@ body {
     margin: 40px;
     width: 240px; /* Fixed width for alignment */
     padding: 46px; /* Padding for better spacing */
-    border: 4px solid #86ff49; /* Adds a border similar to the button */
+    border: 4px solid #5e967d; /* Adds a border similar to the button */
     border-radius: 7px; /* Rounded corners */
     display: flex;
     flex-direction: column;
